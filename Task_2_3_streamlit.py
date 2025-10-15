@@ -237,6 +237,9 @@ if section == "Data Loading":
     
     # Show load button only if data is not loaded
     if st.session_state.df is None:
+        # Warning about button behavior
+        st.warning("⚠️ **Note:** If then load button does not work in one go , go to a different page in nav bar and come again.")
+        
         # Check if there was an error from callback
         if 'load_error' in st.session_state:
             st.error(f"Error loading dataset: {st.session_state.load_error}")
